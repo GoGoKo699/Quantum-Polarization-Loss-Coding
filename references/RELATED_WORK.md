@@ -12,7 +12,7 @@ Bacon, Chuang and Harrow give efficient quantum circuits for Schur and Clebschâ€
 
 Filippov introduces the flagged generalized erasure channel used here. The paper gives degradability and antidegradability criteria for specified filters, along with coherent-information superadditivity examples. In the present problem, one encoder and decoder must work uniformly over unknown input and output axes. The common-filter promise permits a spin-zero reduction whose degradability is controlled by the sum of the transmissivities, including cases where the specified-filter physical channel is not degradable. [Generalized erasure](https://doi.org/10.1088/1751-8121/abfd61)
 
-Kirby, Jones and Brodsky measure and model polarization-dependent loss in fibers, including the consequences of relative loss orientations for the entanglement of photon pairs. That physical setting motivates the orientation assumption. The present calculation uses ideal flagged routing of the lost and surviving branches and does not infer experimental performance from the link model. [Entangled pairs under polarization-dependent loss](https://doi.org/10.1038/s41534-018-0107-x)
+Jones, Kirby and Brodsky measure and model polarization-dependent loss in fibers, including the consequences of relative loss orientations for the entanglement of photon pairs. That physical setting motivates the orientation assumption. The present calculation uses ideal flagged routing of the lost and surviving branches and does not infer experimental performance from the link model. [Entangled pairs under polarization-dependent loss](https://doi.org/10.1038/s41534-018-0107-x)
 
 ## Coding theorems and the adversarial model
 
