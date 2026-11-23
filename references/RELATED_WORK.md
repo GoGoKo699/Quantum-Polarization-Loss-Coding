@@ -14,6 +14,10 @@ Filippov introduces the flagged generalized erasure channel used here. The paper
 
 Jones, Kirby and Brodsky measure and model polarization-dependent loss in fibers, including the consequences of relative loss orientations for the entanglement of photon pairs. That physical setting motivates the orientation assumption. The present calculation uses ideal flagged routing of the lost and surviving branches and does not infer experimental performance from the link model. [Entangled pairs under polarization-dependent loss](https://doi.org/10.1038/s41534-018-0107-x)
 
+## Spin tags in sequential decisions
+
+The [Quantum Chirality Receiver](https://github.com/GoGoKo699/Quantum-Chirality-Receiver/blob/190fa7da086a6bd721e1bed86b799f6a1331eedb/science/flagged-polarization-memory.md) studies a single use of the four-carrier decoded channel in a three-arrival handedness test. It optimizes the first instrument and the readout, and compares keeping the spin tag with keeping the labeled loss mask alone. The [Schur receiver](../science/schur_receiver.md#the-two-survivor-tag-and-mask) supplies the logical effects for that comparison. The rate analysis here and the sister decision theorem use the same decoded channel.
+
 ## Coding theorems and the adversarial model
 
 The quantum coding theorem supplies achievable rates from coherent information. For degradable channels, the Devetak–Shor argument makes this optimization single-letter. Both tools apply to the reduced channel after the Schur receiver, which is identical for every allowed block orientation. [Quantum coding](https://arxiv.org/abs/quant-ph/0304127) · [Degradable channels](https://arxiv.org/abs/quant-ph/0311131)

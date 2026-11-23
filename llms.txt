@@ -9,6 +9,7 @@ The transmitter uses total spin zero. The receiver conditions on the erasure mas
 - [README](README.md): question, four-carrier example and reading routes.
 - [Model](science/model.md): flagged channel, admissible orientation sequences and entanglement-transmission criterion.
 - [Schur receiver](science/schur_receiver.md): spin-zero encoding, exact channel reduction and two-survivor tags.
+- [Chirality decision](science/schur_receiver.md#using-a-single-block-for-a-chirality-decision): one-block quantum memory, mask-only versus tagged readout, and the linked decision theorem.
 - [Capacity](science/capacity.md): finite singlet formula, two-orientation converse and long-coherence rate.
 - [Drift](science/drift.md): within-block perturbation bound and positive-rate concatenation.
 - [Related work](references/RELATED_WORK.md): priors, inherited reductions and scope.

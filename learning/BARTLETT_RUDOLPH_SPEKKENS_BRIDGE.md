@@ -8,10 +8,10 @@ The educational anchor is Stephen D. Bartlett, Terry Rudolph, and Robert W. Spek
 
 | Anchor section | What to bring to the project | Milestones |
 |---|---|---|
-| §II.C, especially Eqs. (2.22)–(2.25) | Decompose a group representation into irreps and multiplicities. On each sector, twirling mixes the irrep and preserves the multiplicity. | [M07](MILESTONES.md#m07-gauge-and-multiplicity)–[M10](MILESTONES.md#m10-splitting-a-singlet-across-a-cut) |
+| §II.C, especially Eq. (2.14) and Theorem 1 | Decompose a group representation into irreps and multiplicities. On each sector, twirling mixes the irrep and preserves the multiplicity. | [M07](MILESTONES.md#m07-gauge-and-multiplicity)–[M10](MILESTONES.md#m10-splitting-a-singlet-across-a-cut) |
 | §III.A.2(a–c) | Count singlet and triplet sectors for two carriers and see how the spin-one-half sector of three carriers stores a logical qubit. | [M06](MILESTONES.md#m06-two-spins-and-total-spin)–[M08](MILESTONES.md#m08-counting-multiplicities), [M18](MILESTONES.md#m18-four-carrier-branch-structure) |
 | §III.A.2(d), Eqs. (3.20)–(3.22) | Generalize the multiplicity count to many carriers and interpret an asymptotic cost of enforcing symmetry. | [M08](MILESTONES.md#m08-counting-multiplicities), [M13](MILESTONES.md#m13-the-four-carrier-encoder), [M25](MILESTONES.md#m25-the-cost-of-imposing-spin-zero) |
-| §III.B, Eqs. (3.24)–(3.25) | See the construction of four-photon spin-zero states from singlet pairings and the appearance of a three-photon multiplicity when one photon is discarded. | [M13](MILESTONES.md#m13-the-four-carrier-encoder)–[M18](MILESTONES.md#m18-four-carrier-branch-structure) |
+| §III.B, Eqs. (3.24)–(3.25) | Use the three four-photon pairings and their overlap magnitude to describe the mask effects. See how a three-photon multiplicity carries information when one photon is discarded. | [M13](MILESTONES.md#m13-the-four-carrier-encoder)–[M18](MILESTONES.md#m18-four-carrier-branch-structure) |
 
 The review uses a noiseless channel in §III.A.2 to isolate the reference-frame problem. Its four-photon states in §III.B illustrate quantum key distribution. Here the task is unassisted quantum communication through a trace-preserving flagged loss channel. The same group decomposition is useful, and the [model](../science/model.md) gives the additional physical assumptions and definitions.
 
@@ -40,6 +40,12 @@ At $`x=0.8`$ and $`y=0.4`$, the quantum branches give receiver weight $`0.4608`$
 ```
 
 Sending one logical qubit through a single block remains a probabilistic process. The rate describes outer coding across many blocks of the same reduced channel. An ordinary erasure decoder that discards all two-loss outcomes would retain quantum information in fewer than half the blocks. The [capacity proof](../science/capacity.md) explains how the sector labels enter the retained output and why the difference of the two weights is the relevant rate for the singlet architecture.
+
+## Follow a spin tag into a chirality decision
+
+Use Eq. (3.24) of the review to find the three logical singlet projectors. Check that their Bloch vectors sum to zero. Each labeled two-survivor cut then gives a pair of weighted effects. Adding those effects removes the spin tag and yields the mask effect $`w_0P_S+w_1(I-P_S)`$. Its dependence on $`P_S`$ survives when $`x\ne y`$. [Two-survivor tag and mask](../science/schur_receiver.md#the-two-survivor-tag-and-mask).
+
+The [chirality decision theorem](https://github.com/GoGoKo699/Quantum-Chirality-Receiver/blob/190fa7da086a6bd721e1bed86b799f6a1331eedb/science/flagged-polarization-memory.md) uses the retained outcomes to choose how to measure later specimens. Compare that one-block score at $`(x,y)=(0.490,0.509)`$ with the zero orientation-independent capacity at the same spectrum. Section VI.A.2 of the review places the handedness test in the broader setting of relational measurements. [M18](MILESTONES.md#m18-four-carrier-branch-structure) and [M30](MILESTONES.md#m30-the-complete-communication-story) connect these two tasks.
 
 ## Read the capacity proof in order
 

@@ -68,3 +68,36 @@ p_E=2(1-x)(1-y)(2-x-y)-3(1-x)^2(1-y)^2.
 ```
 
 Their difference is $`(x+y-1)(1+x+y-2xy)`$. At $`x=0.8,\ y=0.4`$, they are $`0.4608`$ and $`0.1488`$, respectively. The positive difference gives $`0.312`$ logical qubits per four-carrier block, or $`0.078`$ per carrier. Only crediting the first probability would turn this example into an ordinary erasure channel with transmission below one half. The [capacity proof](capacity.md) derives the exact coherent-information formula and identifies where the finite singlet rate is optimal.
+
+## The two-survivor tag and mask
+
+Consider a fixed two-survivor mask $`S`$ with complement $`L`$. Let $`P_S`$ be the logical rank-one projector on $`|s\rangle_S\otimes|s\rangle_L`$. Its orthogonal logical state couples two spin-one triplets to total spin zero. With $`u=x(1-y)`$ and $`v=y(1-x)`$, the gauge norms for these two terms are
+
+```math
+w_0=uv=xy(1-x)(1-y),\qquad
+w_1=\frac{u^2+uv+v^2}{3}=w_0+\frac{(x-y)^2}{3}.
+```
+
+The singlet term has one survival amplitude product and one loss amplitude product. For the triplet term the three orthogonal magnetic-number components have squared weights $`u^2,uv,v^2`$ and equal initial weights.
+
+For a logical input $`\rho`$, the probabilities of the two decoded outcomes $`(S,0)`$ and $`(S,1)`$ are traces against the following effects:
+
+```math
+E_{S,0}=w_0P_S,\qquad E_{S,1}=w_1(I-P_S).
+```
+
+If the receiver discards the spin tag but keeps the labeled mask, the corresponding effect is
+
+```math
+E_S=w_0P_S+w_1(I-P_S).
+```
+
+The six masks give three distinct pairings, each twice. The normalized pair-singlet states from distinct pairings have overlap magnitude $`1/2`$. In a real logical basis their Bloch vectors lie in a plane and have pairwise inner product $`-1/2`$, so they sum to zero. Hence $`\sum_{|S|=2}P_S=3I`$ and the twelve tag effects sum to $`qI`$, with $`q=3(w_0+w_1)=1-p_B-p_E`$. For unequal transmissivities the individual mask effects depend on the logical input, even though their sum is proportional to identity. The decoded model discards the surviving spin gauge in both cases.
+
+## Using a single block for a chirality decision
+
+The [Quantum Chirality Receiver](https://github.com/GoGoKo699/Quantum-Chirality-Receiver/blob/190fa7da086a6bd721e1bed86b799f6a1331eedb/science/flagged-polarization-memory.md) uses one block as memory between the first two arrivals of a three-specimen handedness test. Its first instrument can extract a classical record before encoding. It recovers a logical qubit with three or four survivors, and can still use the spin outcome with exactly two survivors. In the staged version, only a classical record crosses the gap between the second and third specimens. It counts all four physical carriers and every trial.
+
+The exact decision theorem gives a gain over immediate measurement of the first specimen precisely for $`xy\gt 0`$. Retaining the tag strictly improves the optimal score for $`0\lt x,y\lt 1`$ at fixed access to every labeled mask. The mask-only comparison uses $`E_S`$ above. At $`(x,y)=(0.490,0.509)`$ the tagged staged receiver achieves 58.8511% success for an unknown triad of unit volume. The receiver that discards the tag reaches 58.5342% in the staged setting and 58.6230% if it can store both available qubits for a joint final measurement. This example falls below the $`x+y\gt 1`$ [capacity threshold](capacity.md).
+
+The coding result concerns arbitrarily reliable entanglement transmission across many blocks. The chirality score concerns a fixed decision using one block and relies on the full flagged channel after gauge discard.
