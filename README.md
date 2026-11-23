@@ -18,7 +18,7 @@ With two surviving carriers, the receiver and environment each obtain a classica
 
 ## One block as memory for a chirality decision
 
-The [Quantum Chirality Receiver](https://github.com/GoGoKo699/Quantum-Chirality-Receiver/blob/8ed6c5e44188e7cb0e55e2dfec63f1ebc34de7e8/science/flagged-polarization-memory.md) uses the four-carrier block to carry its first specimen forward. Its staged receiver beats immediate first-specimen readout whenever both polarization transmissivities are positive. At unequal transmissivities $`x=0.490`$ and $`y=0.509`$, retaining the spin tag raises the worst-case success probability from 58.5342% to 58.8511% for a unit-volume triad. Both receivers have the full labeled survival mask. The link has zero orientation-independent quantum capacity at this spectrum. See the [decoded tag and mask effects](science/schur_receiver.md#the-two-survivor-tag-and-mask) for the channel behind the comparison.
+The [Quantum Chirality Receiver](https://github.com/GoGoKo699/Quantum-Chirality-Receiver/blob/190fa7da086a6bd721e1bed86b799f6a1331eedb/science/flagged-polarization-memory.md) uses the four-carrier block to carry its first specimen forward. Its staged receiver beats immediate first-specimen readout whenever both polarization transmissivities are positive. At unequal transmissivities $`x=0.490`$ and $`y=0.509`$, retaining the spin tag raises the worst-case success probability from 58.5342% to 58.8511% for a unit-volume triad. Both receivers have the full labeled survival mask. The link has zero orientation-independent quantum capacity at this spectrum. See the [decoded tag and mask effects](science/schur_receiver.md#the-two-survivor-tag-and-mask) for the channel behind the comparison.
 
 ## Read the science
 
