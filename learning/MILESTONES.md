@@ -224,13 +224,13 @@ Read the [educational bridge](BARTLETT_RUDOLPH_SPEKKENS_BRIDGE.md) alongside thi
 
 **Central question.** What reaches each side after zero, one, two, three, or four losses?
 
-**Understanding target.** Identify the logical-qubit branches on the receiver side and on the environment side. Account for the two-survivor sector through the measured spin labels.
+**Understanding target.** Identify the branches that pass a logical qubit to the receiver or environment. For a two-survivor mask, derive both spin-tag effects and add them to get the effect of the mask alone. Check how unequal transmissivities change that effect.
 
 **Prerequisites.** [M11](#m11-coherent-information-with-flags), [M13](#m13-the-four-carrier-encoder), [M15](#m15-the-receiver-for-a-chosen-loss-pattern), [M17](#m17-reading-the-finite-block-formula).
 
-**Conceptual connection.** There is a fundamental difference between sharing classical branch information and replacing the entire unsuccessful output with an erasure.
+**Conceptual connection.** A tag reveals which spin sector occurred. A labeled mask can still carry partial information about that sector when the two polarizations have different transmission probabilities.
 
-**Sources.** [Spin decomposition and receiver](../science/schur_receiver.md).
+**Sources.** [Two-survivor tag and mask](../science/schur_receiver.md#the-two-survivor-tag-and-mask). [Educational bridge](BARTLETT_RUDOLPH_SPEKKENS_BRIDGE.md), §III.B, Eq. (3.24).
 
 ### M19 Four-carrier rate and worked case
 
@@ -356,7 +356,7 @@ Read the [educational bridge](BARTLETT_RUDOLPH_SPEKKENS_BRIDGE.md) alongside thi
 
 **Central question.** What can finite calculations verify in the four-carrier example?
 
-**Understanding target.** Compare the spin-sector sum with direct matrix evaluation at several orientations and check normalization and the scalar-transmission case. Explain which exact identities these tests probe.
+**Understanding target.** Compare the spin-sector sum with direct matrix evaluation at several orientations and check normalization and the scalar-transmission case. For four carriers, test the two-survivor tag and mask effects on every logical matrix unit.
 
 **Prerequisites.** [M17](#m17-reading-the-finite-block-formula), [M19](#m19-four-carrier-rate-and-worked-case), [M22](#m22-a-two-orientation-adversary), [M26](#m26-the-large-block-all-code-bound), [M27](#m27-within-block-variation).
 
@@ -372,6 +372,6 @@ Read the [educational bridge](BARTLETT_RUDOLPH_SPEKKENS_BRIDGE.md) alongside thi
 
 **Prerequisites.** [M12](#m12-the-complete-coding-problem), [M19](#m19-four-carrier-rate-and-worked-case), [M23](#m23-the-sharp-positive-rate-threshold), [M26](#m26-the-large-block-all-code-bound), [M27](#m27-within-block-variation), [M28](#m28-the-provenance-of-the-coding-ingredients), [M29](#m29-checking-proof-against-computation).
 
-**Conceptual connection.** The same synthesis connects the finite example, the all-code obstruction, and the asymptotic rate without conflating their proof scopes.
+**Conceptual connection.** Compare the two thresholds in the example with transmissivities 0.490 and 0.509. Determine why one fixed block still helps decide handedness, and identify what extra information is available when the spin tag is retained.
 
-**Sources.** [Capacity proofs and examples](../science/capacity.md).
+**Sources.** [Capacity proofs and examples](../science/capacity.md). [Chirality decision](../science/schur_receiver.md#using-a-single-block-for-a-chirality-decision).

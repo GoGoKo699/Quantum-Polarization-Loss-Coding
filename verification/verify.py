@@ -202,6 +202,57 @@ def check_four_carriers(x, y):
                 np.testing.assert_allclose(degraded[key], block, atol=ATOL, rtol=0)
 
 
+
+def check_two_survivor_effects(x, y):
+    """Compare each tag and mask effect with the physical channel on matrix units."""
+    singlet = np.array([0, 1, -1, 0]) / np.sqrt(2)
+    dimer = np.kron(singlet, singlet)
+    triplet_up = np.array([1, 0, 0, 0])
+    triplet_zero = np.array([0, 1, 1, 0]) / np.sqrt(2)
+    triplet_down = np.array([0, 0, 0, 1])
+    triplet_pair = (
+        np.kron(triplet_up, triplet_down)
+        - np.kron(triplet_zero, triplet_zero)
+        + np.kron(triplet_down, triplet_up)
+    ) / np.sqrt(3)
+    code_basis = np.column_stack((dimer, triplet_pair))
+    w0 = x * y * (1 - x) * (1 - y)
+    w1 = w0 + (x - y) ** 2 / 3
+    projectors = spin_projectors(2)
+    two_survivor_effects = {}
+    for survivors in combinations(range(4), 2):
+        lost = tuple(index for index in range(4) if index not in survivors)
+        pair_dimer = permutation_matrix(survivors + lost).T @ dimer
+        logical_dimer = code_basis.conj().T @ pair_dimer
+        singlet_effect = np.outer(logical_dimer, logical_dimer.conj())
+        two_survivor_effects[survivors] = {
+            0: w0 * singlet_effect, 2: w1 * (np.eye(2) - singlet_effect)
+        }
+
+    rng = np.random.default_rng(624)
+    u, v = random_unitary(rng), random_unitary(rng)
+    receive = v @ np.diag(np.sqrt([x, y])) @ u
+    lose = u.conj().T @ np.diag(np.sqrt([1 - x, 1 - y])) @ u
+    for i, row in enumerate(code_basis.T):
+        for j, column in enumerate(code_basis.T):
+            operator = np.outer(row, column.conj())
+            bob, _ = physical_marginals(operator, receive, lose, 4)
+            total = 0.0j
+            for survivors, effects in two_survivor_effects.items():
+                block = bob[survivors]
+                for twice_spin, effect in effects.items():
+                    actual = np.trace(projectors[twice_spin] @ block)
+                    np.testing.assert_allclose(actual, effect[j, i], atol=ATOL, rtol=0)
+                mask_entry = (effects[0] + effects[2])[j, i]
+                np.testing.assert_allclose(
+                    np.trace(block), mask_entry, atol=ATOL, rtol=0
+                )
+                total += mask_entry
+            np.testing.assert_allclose(
+                total, 3 * (w0 + w1) * (i == j), atol=ATOL, rtol=0
+            )
+
+
 def check_subthreshold_postfilter(x, y):
     """Check both coin-conditional antidegrading filters on their input support."""
     d = np.diag(np.sqrt([x, y]))
@@ -233,6 +284,8 @@ def main():
     eve_probability = fsum(p for (s, _), p in four.items() if s <= 1)
     np.testing.assert_allclose([bob_probability, eve_probability], [0.4608, 0.1488], atol=ATOL, rtol=0)
     check_four_carriers(x, y)
+    for a, b in ((x, y), (0.490, 0.509), (0.5, 0.5), (1.0, 0.3), (0.0, 0.3)):
+        check_two_survivor_effects(a, b)
     for a, b in ((0.6, 0.3), (0.8, 0.2), (1.0, 0.0), (0.0, 0.0)):
         check_subthreshold_postfilter(a, b)
 
@@ -250,7 +303,7 @@ def main():
 
     print(f"Four-carrier receiver/environment branches: {bob_probability:.4f}, {eve_probability:.4f}")
     print(f"Long-coherence limit: {long_coherence_value(x, y):.10f} qubits per carrier")
-    print("Direct matrices, spin weights, entropy, filters, and boundary checks passed.")
+    print("Direct matrices, spin weights, tag and mask effects, entropy, filters, and boundary checks passed.")
 
 
 if __name__ == "__main__":
