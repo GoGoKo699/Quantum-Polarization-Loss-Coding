@@ -7,14 +7,14 @@ A carrier has two polarization states. A filter $`A:\mathbb C^2\to\mathbb C^2`$ 
 ```math
 \begin{aligned}
 \Gamma_A(\rho)&=A\rho A^\dagger
-  \oplus \operatorname{Tr}[(I-A^\dagger A)\rho]|e\rangle\langle e|,\\
+  \oplus \mathrm{Tr}[(I-A^\dagger A)\rho]|e\rangle\langle e|,\\
 \Gamma_A^c(\rho)&=\Gamma_B(\rho),\qquad B=\sqrt{I-A^\dagger A}.
 \end{aligned}
 ```
 
 An isometry sends $`|\psi\rangle`$ to $`A|\psi\rangle_B|e\rangle_E+|e\rangle_B B|\psi\rangle_E`$. Orthogonal flags remove cross terms in either marginal. Every missing carrier has an original position. For a fixed survivor set $`S`$, the environment holds the carriers in its complement $`L`$. The joint flagged branch results from $`A^{\otimes |S|}\otimes B^{\otimes |L|}`$, in survivor and lost order. Its weight can depend on the encoded state.
 
-Write $`A=V D U`$ with $`D=\operatorname{diag}(\sqrt{x},\sqrt{y})`$ and $`0\le x,y\le1`$. The fixed squared singular values are the two polarization transmissivities. The loss basis on the input and the polarization orientation of surviving output are unknown.
+Write $`A=V D U`$ with $`D=\mathrm{diag}(\sqrt{x},\sqrt{y})`$ and $`0\le x,y\le1`$. The fixed squared singular values are the two polarization transmissivities. The loss basis on the input and the polarization orientation of surviving output are unknown.
 
 ## One coherence block
 

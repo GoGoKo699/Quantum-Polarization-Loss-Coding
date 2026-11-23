@@ -31,7 +31,7 @@ For a labeled split into survivors $`S`$ and losses $`L`$, a spin-zero block pai
 
 ```math
 \mathcal C_n \simeq
- \bigoplus_j M_{S,j}\otimes M_{L,j}\otimes\operatorname{span}\{|\Omega_j\rangle\},
+ \bigoplus_j M_{S,j}\otimes M_{L,j}\otimes\mathrm{span}\{|\Omega_j\rangle\},
 \qquad
 |\Omega_j\rangle=
  \frac{1}{\sqrt{2j+1}}\sum_{m=-j}^{j}(-1)^{j-m}|j,m\rangle|j,-m\rangle.
@@ -45,10 +45,10 @@ The decoder reads the survival mask, applies the Schur transform to the survivin
 \begin{aligned}
 \Phi_n(\rho)
  &=\bigoplus_{S,j} w_{s,l,j}\,
-  \operatorname{Tr}_{M_{L,j}}\!\left(W_{S,j}P_{S,j}\rho P_{S,j}W_{S,j}^\dagger\right),\\
+  \mathrm{Tr}_{M_{L,j}}\!\left(W_{S,j}P_{S,j}\rho P_{S,j}W_{S,j}^\dagger\right),\\
 \Phi_n^c(\rho)
  &=\bigoplus_{S,j} w_{s,l,j}\,
-  \operatorname{Tr}_{M_{S,j}}\!\left(W_{S,j}P_{S,j}\rho P_{S,j}W_{S,j}^\dagger\right).
+  \mathrm{Tr}_{M_{S,j}}\!\left(W_{S,j}P_{S,j}\rho P_{S,j}W_{S,j}^\dagger\right).
 \end{aligned}
 ```
 

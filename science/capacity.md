@@ -7,15 +7,15 @@ A physical carrier is a polarization qubit in a labeled time slot. Its survival 
 ```math
 \begin{aligned}
 \Gamma_A(\rho) &= A\rho A^\dagger \oplus
-     \operatorname{Tr}(B\rho B^\dagger)\lvert e\rangle\!\langle e\rvert,\\
+     \mathrm{Tr}(B\rho B^\dagger)\lvert e\rangle\!\langle e\rvert,\\
 \Gamma_A^c(\rho) &= B\rho B^\dagger \oplus
-     \operatorname{Tr}(A\rho A^\dagger)\lvert e\rangle\!\langle e\rvert .
+     \mathrm{Tr}(A\rho A^\dagger)\lvert e\rangle\!\langle e\rvert .
 \end{aligned}
 ```
 
 They follow from the isometry $`\lvert\psi\rangle\mapsto A\lvert\psi\rangle_B\lvert e\rangle_E+\lvert e\rangle_B B\lvert\psi\rangle_E`$, with output subscripts denoting Bob and the environment. The erasure probability can depend on the input polarization.
 
-A known block comprises $`n`$ physical slots. In each block $`A=VDU`$, where $`D=\operatorname{diag}(\sqrt{x},\sqrt{y})`$ and $`0\le x,y\le1`$. The spectrum $`(x,y)`$ is fixed and available for code design. The two unitaries are unknown and can change arbitrarily from block to block. For any fixed sequence of operators, the physical channel is a tensor product. Receiver survival flags preserve the indicated quantum outputs. These flags, coherent encoding and joint quantum decoding are part of the model.
+A known block comprises $`n`$ physical slots. In each block $`A=VDU`$, where $`D=\mathrm{diag}(\sqrt{x},\sqrt{y})`$ and $`0\le x,y\le1`$. The spectrum $`(x,y)`$ is fixed and available for code design. The two unitaries are unknown and can change arbitrarily from block to block. For any fixed sequence of operators, the physical channel is a tensor product. Receiver survival flags preserve the indicated quantum outputs. These flags, coherent encoding and joint quantum decoding are part of the model.
 
 Write $`Q_n(x,y)`$ for the orientation-independent capacity $`Q_{\mathrm{rob}}(n)`$ of the [model](model.md), displaying the fixed spectrum explicitly. For fixed $`n`$, a deterministic code must have entanglement fidelity tending to one uniformly over all axis sequences as the number of blocks grows. Each transmitted slot counts, including lost or ignored slots. The encoder and decoder use no feedback, preshared entanglement, shared randomness, or pilot calibration of the axes.
 
@@ -26,20 +26,20 @@ For even $`n`$, use the spin-zero space $`\mathcal H_{n,0}`$ of $`n`$ qubits. Wr
 ```math
 \bigoplus_j
     \mathcal M_{s,j}\otimes\mathcal M_{\ell,j}
-    \otimes\operatorname{span}\{\lvert\Omega_j\rangle\},
+    \otimes\mathrm{span}\{\lvert\Omega_j\rangle\},
 \qquad
 \lvert\Omega_j\rangle
   =\frac{1}{\sqrt{2j+1}}\sum_{a=-j}^j
       (-1)^{j-a}\lvert j,a\rangle\lvert j,-a\rangle .
 ```
 
-The sum uses the spins appearing on both sides. Each common input rotation acts by a scalar on spin zero, and a tensor power of any one-qubit matrix acts on the spin space only within each sector. In the survival branch $`S`$, the surviving carriers see $`(VD)^{\otimes s}`$ and the lost carriers see $`L^{\otimes\ell}`$ after removing the common input rotation, where $`L=\operatorname{diag}(\sqrt{1-x},\sqrt{1-y})`$.
+The sum uses the spins appearing on both sides. Each common input rotation acts by a scalar on spin zero, and a tensor power of any one-qubit matrix acts on the spin space only within each sector. In the survival branch $`S`$, the surviving carriers see $`(VD)^{\otimes s}`$ and the lost carriers see $`L^{\otimes\ell}`$ after removing the common input rotation, where $`L=\mathrm{diag}(\sqrt{1-x},\sqrt{1-y})`$.
 
 The receiver applies a Schur transform to the surviving qubits, reads their spin $`j`$, and discards the spin register. It retains $`(S,j)`$ and the surviving multiplicity. For fixed $`S,j`$, write $`\Pi_{S,j}`$ for the projection in the cut decomposition. The reduced receiver channel $`\Phi_n`$ is
 
 ```math
 \Phi_n(\rho)=\bigoplus_{S,j} w_{s,\ell,j}\,
- \operatorname{Tr}_{\mathcal M_{\ell,j}}(\Pi_{S,j}\rho\Pi_{S,j}).
+ \mathrm{Tr}_{\mathcal M_{\ell,j}}(\Pi_{S,j}\rho\Pi_{S,j}).
 ```
 
 Here $`w_{s,\ell,j}`$ is the squared norm of the filtered spin singlet on the two spin registers. The left rotation $`V`$ only rotates a discarded register, so this channel is identical for every allowed choice of axes. An outer code across blocks therefore sees the same ordinary memoryless channel $`\Phi_n`$ for every sequence, including sequences in which the orientations change at every block boundary.
@@ -51,7 +51,7 @@ The corresponding environment channel carries the same classical labels $`(S,j)`
 Start with the canonical diagonal filter. If $`x+y\ge1`$, the receiver-side polarization contraction
 
 ```math
-F_+=\operatorname{diag}\!\left(\sqrt{\frac{1-y}{x}},
+F_+=\mathrm{diag}\!\left(\sqrt{\frac{1-y}{x}},
                               \sqrt{\frac{1-x}{y}}\right)
 ```
 
