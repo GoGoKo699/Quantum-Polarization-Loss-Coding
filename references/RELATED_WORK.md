@@ -16,7 +16,7 @@ Jones, Kirby and Brodsky measure and model polarization-dependent loss in fibers
 
 ## Spin tags in sequential decisions
 
-The [Quantum Chirality Receiver](https://github.com/GoGoKo699/Quantum-Chirality-Receiver/blob/6fe481bb286906ee6fe6eed528fbf1abaeabf241/science/flagged-polarization-memory.md) studies a single use of the four-carrier decoded channel in a three-arrival handedness test. It optimizes the first instrument and the readout, and compares keeping the spin tag with keeping the labeled loss mask alone. The [Schur receiver](../science/schur_receiver.md#the-two-survivor-tag-and-mask) supplies the logical effects for that comparison. The rate analysis here and the sister decision theorem use the same decoded channel.
+The [Quantum Chirality Receiver](https://github.com/GoGoKo699/Quantum-Chirality-Receiver/blob/8ed6c5e44188e7cb0e55e2dfec63f1ebc34de7e8/science/flagged-polarization-memory.md) studies a single use of the four-carrier decoded channel in a three-arrival handedness test. It optimizes the first instrument and the readout, and compares keeping the spin tag with keeping the labeled loss mask alone. The [Schur receiver](../science/schur_receiver.md#the-two-survivor-tag-and-mask) supplies the logical effects for that comparison. The rate analysis here and the sister decision theorem use the same decoded channel.
 
 ## Coding theorems and the adversarial model
 
