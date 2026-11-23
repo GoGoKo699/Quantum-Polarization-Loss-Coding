@@ -1,0 +1,20 @@
+# Quantum Polarization Loss Coding
+
+> Quantum communication across labeled carriers with polarization-dependent attenuation and unknown axes that can change between coherence blocks.
+
+The transmitter uses total spin zero. The receiver conditions on the erasure mask and measures the Schur spin to retain the multiplicity space. Match the common-filter promise and the accounting of every physical carrier before importing a formula. The finite singlet-restricted capacity, the all-encoder positivity criterion and the long-block all-encoder limit answer different questions.
+
+## Science
+
+- [README](README.md): question, four-carrier example and reading routes.
+- [Model](science/model.md): flagged channel, admissible orientation sequences and entanglement-transmission criterion.
+- [Schur receiver](science/schur_receiver.md): spin-zero encoding, exact channel reduction and two-survivor tags.
+- [Capacity](science/capacity.md): finite singlet formula, two-orientation converse and long-coherence rate.
+- [Drift](science/drift.md): within-block perturbation bound and positive-rate concatenation.
+- [Related work](references/RELATED_WORK.md): priors, inherited reductions and scope.
+
+## Study and verification
+
+- [Milestones](learning/MILESTONES.md): project-defined study route through all 30 milestones.
+- [Review bridge](learning/BARTLETT_RUDOLPH_SPEKKENS_BRIDGE.md): the single educational anchor and its connections to the proof.
+- [Verification](verification/README.md): commands and scope for direct finite checks.
